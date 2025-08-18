@@ -1,157 +1,78 @@
-<!DOCTYPE html><html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X TKJ B SAGA — Cyber Portal</title>
-  <meta name="description" content="Portal kelas X TKJ B SAGA bertema cyber: pengumuman, jadwal, proyek, dan kontak." />
-  <style>
-    /* ====== Reset & Base ====== */
-    *, *::before, *::after { box-sizing: border-box; }
-    :root {
-      --bg: #0b0f14;
-      --panel: rgba(18, 24, 31, 0.6);
-      --text: #e6f1ff;
-      --muted: #a9b3c1;
-      --accent1: #00e5ff;
-      --accent2: #ff3ef6;
-      --accent3: #5cff6b;
-      --glow: 0 0 15px rgba(0, 229, 255, 0.6), 0 0 30px rgba(255, 62, 246, 0.3);
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
-      --grid-gap: clamp(14px, 2vw, 22px);
-    }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans;
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 10% 0%, rgba(0,229,255,0.06), transparent 60%),
-                  radial-gradient(1000px 500px at 90% 20%, rgba(255,62,246,0.06), transparent 60%),
-                  radial-gradient(800px 500px at 50% 100%, rgba(92,255,107,0.06), transparent 60%),
-                  #090c12;
-      overflow-x: hidden;
-    }body::before {
-  content: "";
-  position: fixed; inset: 0;
-  background:
-    linear-gradient(transparent 15px, rgba(0,229,255,0.06) 16px, transparent 17px),
-    linear-gradient(90deg, transparent 15px, rgba(255,62,246,0.06) 16px, transparent 17px);
-  background-size: 22px 22px;
-  pointer-events: none;
-  animation: drift 40s linear infinite;
-}
-@keyframes drift { from { transform: translateY(0); } to { transform: translateY(22px); } }
+X TKJ B SAGA /* ====== Reset & Base ====== */ *, *::before, *::after { box-sizing: border-box; } :root { --bg: #0b0f14; --panel: rgba(18, 24, 31, 0.6); --text: #e6f1ff; --muted: #a9b3c1; --accent1: #00e5ff; --accent2: #ff3ef6; --accent3: #5cff6b; --glow: 0 0 15px rgba(0, 229, 255, 0.6), 0 0 30px rgba(255, 62, 246, 0.3); --radius: 16px; --shadow: 0 10px 30px rgba(0,0,0,0.35); --grid-gap: clamp(14px, 2vw, 22px); } html, body { height: 100%; } body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans; color: var(--text); background: radial-gradient(1200px 600px at 10% 0%, rgba(0,229,255,0.06), transparent 60%), radial-gradient(1000px 500px at 90% 20%, rgba(255,62,246,0.06), transparent 60%), radial-gradient(800px 500px at 50% 100%, rgba(92,255,107,0.06), transparent 60%), #090c12; overflow-x: hidden; } <pre><code>body::before { content: &quot;&quot;; position: fixed; inset: 0; background: linear-gradient(transparent 15px, rgba(0,229,255,0.06) 16px, transparent 17px), linear-gradient(90deg, transparent 15px, rgba(255,62,246,0.06) 16px, transparent 17px); background-size: 22px 22px; pointer-events: none; animation: drift 40s linear infinite; } @keyframes drift { from { transform: translateY(0); } to { transform: translateY(22px); } } a { color: var(--accent1); text-decoration: none; } a:hover { text-decoration: underline; } .topbar { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: linear-gradient(90deg, rgba(0,229,255,0.06), rgba(255,62,246,0.06)); border-bottom: 1px solid rgba(255,255,255,0.06); } .nav { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: grid; grid-template-columns: 1fr auto; align-items: center; } .nav-links { display: flex; gap: 14px; flex-wrap: wrap; } .chip { padding: 8px 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; background: rgba(255,255,255,0.04); transition: 0.2s ease; font-size: 14px; } .chip:hover { transform: translateY(-1px); box-shadow: var(--glow); } .hero { max-width: 1100px; margin: 28px auto; padding: 0 16px 8px; } .title { font-size: clamp(34px, 6vw, 64px); line-height: 1.05; font-weight: 800; margin: 24px 0 10px; letter-spacing: 0.5px; background: conic-gradient(from 0deg, #ff004c, #ff9900, #ffee00, #33ff00, #00ffee, #004cff, #b700ff, #ff004c); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hueShift 6s linear infinite; filter: drop-shadow(0 0 10px rgba(255,255,255,0.05)); } @keyframes hueShift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } } .subtitle { color: var(--muted); font-size: clamp(16px, 2.4vw, 20px); max-width: 800px; } .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; } .btn { padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); box-shadow: var(--shadow); cursor: pointer; color: var(--text); font-weight: 600; transition: 0.25s ease; display: inline-flex; align-items: center; gap: 8px; } .btn:hover { transform: translateY(-2px); box-shadow: var(--glow); } section { max-width: 1100px; margin: 0 auto; padding: 22px 16px 8px; } .grid { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(12, 1fr); } .card { grid-column: span 12; border: 1px solid rgba(255,255,255,0.08); background: var(--panel); backdrop-filter: blur(8px); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(14px, 2vw, 18px); position: relative; overflow: hidden; } footer { text-align: center; color: var(--muted); padding: 40px 16px 60px; } .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,229,255,0.6), rgba(255,62,246,0.6), rgba(92,255,107,0.6), transparent); opacity: 0.6; margin: 18px 0; } .code { font-family: monospace; background: rgba(0,0,0,0.35); border: 1px dashed rgba(255,255,255,0.15); padding: 10px 12px; border-radius: 10px; font-size: 13px; color: #c4f7d0; } </code></pre> 
+X TKJ B SAGA
+Pengumuman Jadwal Proyek Anggota Kontak 
+X TKJ B SAGA
+Website informasi kelas yang di gunakan untuk mendapatkan informasi dari setiap kegiatan kami di sekolah.
+📢 Pengumuman
+- COMING SOON.
+🗓️ Jadwal Pelajaran
+- Senin
+ 1. U/A
+ 2. DDTJKT
+ 3. IPAS
+ 4. PENJASORKES
 
-a { color: var(--accent1); text-decoration: none; }
-a:hover { text-decoration: underline; }
+- Selasa
+ 1. PP
+ 2. INFORMATIKA
+ 3. PANCASILA
+ 4. MATEMATIKA
 
-.topbar {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: blur(10px);
-  background: linear-gradient(90deg, rgba(0,229,255,0.06), rgba(255,62,246,0.06));
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.nav {
-  max-width: 1100px; margin: 0 auto; padding: 10px 16px;
-  display: grid; grid-template-columns: 1fr auto; align-items: center;
-}
-.nav-links { display: flex; gap: 14px; flex-wrap: wrap; }
-.chip {
-  padding: 8px 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px;
-  background: rgba(255,255,255,0.04); transition: 0.2s ease; font-size: 14px;
-}
-.chip:hover { transform: translateY(-1px); box-shadow: var(--glow); }
+- Rabu
+ 1. IPAS
+ 2. DDTJKT
+ 3. B.INGGRIS
 
-.hero { max-width: 1100px; margin: 28px auto; padding: 0 16px 8px; }
-.title {
-  font-size: clamp(34px, 6vw, 64px);
-  line-height: 1.05; font-weight: 800; margin: 24px 0 10px;
-  letter-spacing: 0.5px;
-  background: conic-gradient(from 0deg,
-      #ff004c, #ff9900, #ffee00, #33ff00, #00ffee, #004cff, #b700ff, #ff004c);
-  background-size: 200% 200%;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: hueShift 6s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.05));
-}
-@keyframes hueShift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+- Kamis
+ 1. KKA
+ 2. PAI
+ 3. SENI BUDAYA
+ 4. DDTJKT
 
-.subtitle { color: var(--muted); font-size: clamp(16px, 2.4vw, 20px); max-width: 800px; }
-
-.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
-.btn {
-  padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  box-shadow: var(--shadow); cursor: pointer; color: var(--text); font-weight: 600;
-  transition: 0.25s ease; display: inline-flex; align-items: center; gap: 8px;
-}
-.btn:hover { transform: translateY(-2px); box-shadow: var(--glow); }
-
-section { max-width: 1100px; margin: 0 auto; padding: 22px 16px 8px; }
-.grid { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(12, 1fr); }
-.card {
-  grid-column: span 12;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: var(--panel);
-  backdrop-filter: blur(8px);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: clamp(14px, 2vw, 18px);
-  position: relative; overflow: hidden;
-}
-
-footer { text-align: center; color: var(--muted); padding: 40px 16px 60px; }
-.divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,229,255,0.6), rgba(255,62,246,0.6), rgba(92,255,107,0.6), transparent); opacity: 0.6; margin: 18px 0; }
-.code { font-family: monospace; background: rgba(0,0,0,0.35); border: 1px dashed rgba(255,255,255,0.15); padding: 10px 12px; border-radius: 10px; font-size: 13px; color: #c4f7d0; }
-
-  </style>
-</head>
-<body>
-  <div class="topbar">
-    <div class="nav">
-      <div class="logo"><strong>X TKJ B SAGA</strong></div>
-      <div class="nav-links">
-        <a class="chip" href="#pengumuman">Pengumuman</a>
-        <a class="chip" href="#jadwal">Jadwal</a>
-        <a class="chip" href="#proyek">Proyek</a>
-        <a class="chip" href="#anggota">Anggota</a>
-        <a class="chip" href="#kontak">Kontak</a>
-      </div>
-    </div>
-  </div>  <header class="hero">
-    <h1 class="title">X TKJ B SAGA — CYBER PORTAL</h1>
-    <p class="subtitle">Portal informasi kelas dengan tema cyber dan aksen RGB.</p>
-  </header>  <section id="pengumuman">
-    <div class="card">
-      <h3>📢 Pengumuman</h3>
-      <p>- Contoh pengumuman kelas di sini.</p>
-    </div>
-  </section>  <section id="jadwal">
-    <div class="card">
-      <h3>🗓️ Jadwal Pelajaran</h3>
-      <p>- Contoh jadwal pelajaran kelas.</p>
-    </div>
-  </section>  <section id="proyek">
-    <div class="card">
-      <h3>⚙️ Proyek Kelas</h3>
-      <p>- Contoh proyek yang sedang dikerjakan.</p>
-    </div>
-  </section>  <section id="anggota">
-    <div class="card">
-      <h3>👥 Anggota Kelas</h3>
-      <p>- Daftar anggota kelas dapat ditambahkan di sini.</p>
-    </div>
-  </section>  <section id="kontak">
-    <div class="card">
-      <h3>📬 Kontak</h3>
-      <p class="muted">Jika ada pertanyaan atau perlu informasi lebih lanjut, silakan hubungi email resmi kelas:</p>
-      <p><a href="mailto:marcelinuspanduprasetyo2009@gmail.com" class="btn">✉️ Kirim Email</a></p>
-      <div class="code">Email: marcelinuspanduprasetyo2009@gmail.com</div>
-    </div>
-  </section>  <footer>
-    <div class="divider"></div>
-    <small>© <span id="year"></span> X TKJ B SAGA • Cyber Portal</small>
-  </footer>  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script></body>
-</html>
+- Jumat
+ 1. B.JAWA
+ 2. SEJARAH
+ 3. B.INDONESIA
+ 4. JAM TAMBAHAN/PRAMUKA
+⚙️ Proyek Kelas
+- Saat ini kami siswa/siswi kelas X TKJ B sedang mengerjakan tugas dari mata pelajaran KKA,BAHASA JAWA,SENI BUDAYA dengan metode presentasi.
+👥 Anggota Kelas
+1.Anindya Calista Indriani
+2.Aray Moh Iqbal
+3.Arindya Kanaya
+4.Aulia Nur Ramadhani
+5.Bagas Ardiantoro
+6.Cesa Maharani
+7.Eko Susanto
+8.Elsha Wahyuningsih
+9.Fahri Ahmad Josan
+10.Faishal Zaky Ramadhan
+11.Febriyanti Nur Hidayah
+12.Hanifa Citra Utami
+13.Herlina Putri Aryani
+14.Irfan Ali Rabbani
+15.Ismawati
+16.Khoirul Nur Assidik
+17.Lu'lu'  Khalishatul Munawwarah
+18.Luvi Dwi Anjani 
+19.Marcellinus Pandu Prasetyo(L) 
+20.Muchammad Charlyansyah Radeva
+21.Muhammad Al Fatih
+22.Nanda Fatimah
+23.Nasywa Fatihah Inas
+24.Permana Siddiq Rohim
+25.Raihan Nur Fattih(L) 
+26.Rakha Evan Mustafa(XXL) 
+27.Rani Purbaningrum
+28.Rashel Cahya Ramadhani
+29.Renita Putri Apriliani
+30.Rizuan Azzam Ar Rayyan(L) 
+31.Savira Atiqa Rahmawati
+32.Sekar Wulandari
+33.Yulia Fresiyani
+34.Zharifah Khansa Yulianto
+📬 Kontak
+Jika ada pertanyaan atau perlu informasi lebih lanjut, silakan hubungi email resmi kelas:
+✉️ Kirim Email
+Email: marcelinuspanduprasetyo2009@gmail.com
+© X TKJ B SAGA • WEBSITE RESMI document.getElementById('year').textContent = new Date().getFullYear(); 
